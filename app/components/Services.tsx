@@ -3,9 +3,9 @@
 import { motion, AnimatePresence, type MotionProps, type Transition } from "framer-motion";
 import {
   Sofa, Car, Ship, Armchair, Home, MapPin,
-  Droplets, ShieldCheck, CheckCircle2, Sparkles, Clock, PhoneCall,
+  Droplets, ShieldCheck, CheckCircle2, Sparkles, Clock,
   PlusCircle, MinusCircle, ShoppingCart
-} from "lucide-react";
+} from "lucide-react"; // KULLANILMAYAN 'PhoneCall' İKONU KALDIRILDI
 import React, { useState, useMemo } from "react";
 
 // --- İKON TİPİ ---
@@ -91,7 +91,7 @@ const SERVICES: {
   {
     id: "yatak",
     title: "Yatak Yıkama",
-    icon: Home, // You might want a bed icon here
+    icon: Home, // Bed icon'u yerine Home kullanılmış
     desc: "Alerjen ve akarlardan arındırılmış, derinlemesine temizlenmiş yataklar ile daha sağlıklı bir uyku ortamı yaratıyoruz.",
     price: 600,
     visual: "🛏️",
@@ -188,7 +188,6 @@ export default function Services() {
                           <div className="rounded-xl bg-[#F27A1A]/10 p-3">
                             <IconEl className="h-7 w-7 text-[#F27A1A]" />
                           </div>
-                          {/* DÜZELTME: Başlık için metin rengi eklendi */}
                           <h3 className="text-xl font-semibold text-slate-900">{s.title}</h3>
                       </div>
                       <span className="text-2xl font-bold text-[#F27A1A]">{s.price} TL</span>
@@ -198,7 +197,6 @@ export default function Services() {
 
                   <ul className="mt-4 space-y-2 text-sm">
                     {s.bullets.map((b) => (
-                      // DÜZELTME: Liste elemanları için metin rengi eklendi
                       <li key={b} className="flex items-center gap-2 text-slate-700">
                         <CheckCircle2 className="h-5 w-5 text-emerald-400" />
                         {b}
@@ -219,7 +217,6 @@ export default function Services() {
                   <button onClick={() => removeFromCart(s.id)} disabled={!quantity} className="disabled:opacity-30 disabled:cursor-not-allowed">
                     <MinusCircle className="h-10 w-10 text-slate-400 hover:text-red-500 transition-colors" />
                   </button>
-                  {/* DÜZELTME: Miktar sayısı için metin rengi eklendi */}
                   <span className="text-3xl font-bold w-12 text-center text-slate-900">{quantity}</span>
                   <button onClick={() => addToCart(s.id)}>
                     <PlusCircle className="h-10 w-10 text-slate-400 hover:text-green-500 transition-colors" />
@@ -293,4 +290,3 @@ export default function Services() {
     </section>
   );
 }
-
