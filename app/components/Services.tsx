@@ -282,7 +282,7 @@ export default function Services() {
                     className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-6 py-4 font-bold text-white shadow-lg transition hover:bg-[#128C7E] md:w-auto"
                   >
                     <ShoppingCart className="h-6 w-6" />
-                    WhatsApp’tan Randevu Al
+                      {'WhatsApp’tan Randevu Al'} 
                   </a>
                 </div>
               </div>
