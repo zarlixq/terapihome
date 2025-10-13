@@ -43,7 +43,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="tr">
-      <body className={`${poppins.className} bg-black text-white scroll-smooth`}>
+      {/*
+        DÜZELTME: `bg-black` ve `text-white` sınıfları kaldırıldı.
+        Bu sınıflar, globals.css dosyasındaki renk yönetimini eziyordu.
+        Artık arka plan ve metin renkleri merkezi olarak CSS dosyasından yönetilecek.
+      */}
+      <body className={`${poppins.className} scroll-smooth`}>
         {/* Üst menü */}
         <Topbar />
 
