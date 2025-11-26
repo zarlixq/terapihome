@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Topbar from "./components/Topbar";
-import Footer from "./components/Footer";
 import WhatsappButton from "./components/WhatsappButton";
 
 // Google Font
@@ -13,32 +12,49 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Antalya Koltuk Yıkama | TerapiHome",
+  title: "Antalya Koltuk Yıkama | Profesyonel Yerinde Temizlik | TerapiHome",
   description:
-    "Antalya'da profesyonel koltuk yıkama hizmeti. Evde, ofiste ve aracınızda güçlü ekstraksiyon makineleriyle derin temizlik. Uygun fiyat, güvenilir hizmet, hemen arayın!",
+    "Antalya'da evde koltuk yıkama, çekyat temizliği, yatak yıkama ve araç içi detaylı temizlik hizmeti. Güçlü makineler, derinlemesine hijyen, uygun fiyat ve hızlı servis.",
   keywords: [
     "Antalya koltuk yıkama",
     "evde koltuk yıkama",
-    "profesyonel koltuk temizliği",
+    "yerinde koltuk yıkama",
+    "koltuk temizleme",
+    "çekyat yıkama antalya",
+    "yatak yıkama antalya",
     "koltuk yıkama fiyatları",
+    "profesyonel koltuk temizliği",
     "araç içi detaylı temizlik",
+    "buharlı koltuk temizliği",
+    "leke çıkarma hizmeti",
+    "Antalya temizlik hizmetleri"
   ],
   openGraph: {
     title: "Antalya Koltuk Yıkama | TerapiHome",
     description:
-      "Antalya'da profesyonel koltuk yıkama ve detaylı temizlik hizmeti. Ev, ofis ve araç için hijyenik çözümler.",
+      "Antalya’da profesyonel koltuk yıkama, çekyat ve yatak temizliği. Evde yerinde hizmet, güçlü makineler, hızlı ve güvenilir çözüm.",
     url: "https://www.terapihome.com",
     siteName: "TerapiHome",
     locale: "tr_TR",
     type: "website",
+    images: [
+      {
+        url: "https://www.terapihome.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Antalya Koltuk Yıkama TerapiHome",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Antalya Koltuk Yıkama | TerapiHome",
     description:
-      "Antalya'da profesyonel koltuk yıkama hizmeti. Evde, ofiste ve aracınızda güvenilir temizlik çözümleri.",
+      "Antalya'da evde koltuk yıkama ve detaylı temizlik hizmeti. Profesyonel ekip, hijyenik sonuçlar, uygun fiyatlar.",
+    images: ["https://www.terapihome.com/og-image.jpg"],
   },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -55,8 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Sayfa içerikleri */}
         {children}
 
-        {/* Alt kısım */}
-        <Footer />
+      
 
         {/* Sağ altta WhatsApp butonu */}
         <WhatsappButton />
