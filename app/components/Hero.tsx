@@ -23,17 +23,17 @@ const fadeUp = (delay = 0): MotionProps => ({
 
 const SLIDES = [
   {
-    video: "/images/video1.mov",
+    video: "/images/video1.mp4",
     title: "YIKAMA HİZMETLERİ",
     desc: "Koltuk | Yatak | Sandalye | Yerinde Halı | Araç koltuğu",
   },
   {
-    video: "/images/video2.mov",
+    video: "/images/video2.mp4",
     title: "EV TEMİZLİĞİ",
     desc: "Sabit Ev Temizliği | Boş Ev Temizliği",
   },
   {
-    video: "/images/video3.mov",
+    video: "/images/video3.mp4",
     title: "İNŞAAT TEMİZLİĞİ",
     desc: "Tadilat Sonrası Veya Kaba İnşaat Temizliği",
   },
