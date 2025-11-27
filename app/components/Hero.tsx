@@ -13,6 +13,7 @@ import {
 import logo from "@/public/images/logo.png";
 
 const EASE: Transition["ease"] = [0.22, 1, 0.36, 1];
+
 const fadeUp = (delay = 0): MotionProps => ({
   initial: { opacity: 0, y: 18 },
   animate: { opacity: 1, y: 0 },
@@ -43,8 +44,9 @@ const PHONE_E164 = "+905545978717";
 export default function Hero() {
   const [i, setI] = useState(0);
   const [durations, setDurations] = useState<number[]>([5000, 5000, 5000]);
+
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  const timeoutRef = useRef<any>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleMetadata = (index: number, el: HTMLVideoElement) => {
     const d = el.duration;
@@ -59,7 +61,9 @@ export default function Hero() {
   const prev = () => setI((p) => (p - 1 + SLIDES.length) % SLIDES.length);
 
   useEffect(() => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
 
     timeoutRef.current = setTimeout(() => {
       next();
@@ -71,10 +75,17 @@ export default function Hero() {
       video.play?.();
     }
 
-    return () => clearTimeout(timeoutRef.current);
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
   }, [i, durations]);
 
-  const onDragEnd = (_: any, info: PanInfo) => {
+  const onDragEnd = (
+    _event: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo
+  ) => {
     const dx = info.offset.x;
     if (dx > 60) prev();
     else if (dx < -60) next();
@@ -124,7 +135,6 @@ export default function Hero() {
         className="absolute inset-0 grid place-items-center px-6"
       >
         <div className="w-full max-w-3xl text-center flex flex-col items-center">
-
           {/* Logo */}
           <motion.div {...fadeUp(0)} className="flex flex-col items-center">
             <Image
